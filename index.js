@@ -1,3 +1,11 @@
+const express = require("express");
+const app = express();
+
+app.listen(() => console.log("start btrolie"));
+
+app.use('/ping', (req, res) => {
+  res.send(new Date());
+});
 /**
  * Module Imports
  */
@@ -20,7 +28,7 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}help`);
+  client.user.setActivity(`${PREFIX}play| DEV TIGER`);
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
